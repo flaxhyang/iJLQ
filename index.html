@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--<link rel="icon" href="../../favicon.ico"> -->
-    <title>金领圈2</title>
+    <title>bootstrap</title>
     <!-- Bootstrap core CSS -->
    <!-- <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"> -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/swiper.3.1.7.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <!-- Custom styles for this template -->
    <!-- <link href="starter-template.css" rel="stylesheet">-->
@@ -18,47 +19,62 @@
     <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <!-- <a class="navbar-brand" href="#">金领圈<small>ijinglingquan</small></a> -->
-            <h2>金领圈<small>投资，融资</small></h2>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse navbar-right">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
+            <ul class="nav pull-right">
+                <li><a href="#" onclick="loginPage()">注册</a> </li>
             </ul>
-        </div><!--/.nav-collapse -->
+            <h2>bootstrap<small>boot,strap</small></h2>
+        </div>
+
     </div>
 </nav>
 
-<div class="container">
-    <div class="text-center">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-        <button type="button"></button>
+<div class="mainContainer">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+                <div class="swiper-slide stop-swiping">
+                    <div class="container">
+                        <div>
+                            <h1>Bootstrap starter template</h1>
+                            <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+                        </div>
+                        <div>
+                            <a class="btn btn-info btn-lg" href="#" onclick="loginPage()">注册</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide stop-swiping">注册页</div>
+                <div class="swiper-slide stop-swiping">注册成功</div>
+        </div>
     </div>
-
 </div>
 
 <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/swiper.3.1.7.jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+
+
+<script>
+    var mySwiper = new Swiper('.swiper-container',{
+        noSwiping : true,
+        noSwipingClass : 'stop-swiping',
+        effect : 'cube',
+        cube: {
+            slideShadows: true,
+            shadow: false,
+            shadowOffset: 1,
+            shadowScale: 0.6
+        }
+    })
+    function loginPage(){
+        mySwiper.slideTo(1);//切换到第一个slide，速度为1秒
+    }
+</script>
 </body>
 </html>
