@@ -20,13 +20,15 @@ body{
     width: 100%;
     height: 100%;
 }
-.div1{
-    background-color: #337ab7;
-}
-.div2{
-    background-color: #b72c1c;
-}
 
 .nav{
     padding-top: 4%;
+}
+
+.but1{
+    margin-top: 30px;
+}
+
+.bs-callout-warning {
+    border-left-color: #1b809e;
 }
