@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--<link rel="icon" href="../../favicon.ico"> -->
-    <title>bootstrap</title>
+    <title>金领圈</title>
     <!-- Bootstrap core CSS -->
    <!-- <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"> -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -26,26 +26,48 @@
 
 <body>
 
+<!--<nav class="navbar navbar-default navbar-fixed-top">-->
+    <!--<div class="container">-->
+        <!--<div class="navbar-header">-->
+            <!--<ul class="nav pull-right nav-pills">-->
+                <!--<li><a href="#" onclick="loginPage()">首页</a> </li>-->
+                <!--<li><a href="#" onclick="loginPage()">我要报名</a> </li>-->
+            <!--</ul>-->
+            <!--<h2><em>金领圈<small>JLQ</small></em></h2>-->
+        <!--</div>-->
+
+    <!--</div>-->
+<!--</nav>-->
+
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <ul class="nav pull-right nav-pills">
-                <li><a href="#" onclick="loginPage()">首页</a> </li>
-                <li><a href="#" onclick="loginPage()">我要报名</a> </li>
-            </ul>
-            <h2><em>金领圈<small>JLQ</small></em></h2>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">金领圈</a>
         </div>
-
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#" onclick="mainPage()">首页</a></li>
+                <li><a href="#" onclick="loginPage()">注册</a></li>
+                <li><a href="#" onclick="MapPage()">地图</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
     </div>
 </nav>
+
 
 <div class="mainContainer">
     <div class="swiper-container">
         <div class="swiper-wrapper">
-                <div class="swiper-slide stop-swiping">
+                <div class="swiper-slide">
                     <div class="container">
                         <div>
-                            <h2>金领圈-电影投资的风险控制与商业模式</h2>
+                            <h2>金领圈-互联网金融面临的风险与未来</h2>
                             <blockquote class="lead bs-callout-warning">日程：<br>
                                 14:00-14:30 嘉宾签到<br>
                                 14:30-14:50 参会人员自我介绍<br>
@@ -56,71 +78,109 @@
                                 17:35-18:00 互动交流环节</blockquote>
                         </div>
                         <div class="lead">
-                            <p >
+                            <p>
                                 <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
                                 活动时间：2015.10.26
                             </p>
                             <p>
-                                <h3>
+                                <h3 onclick="MapPage()">
                                 <span class="label label-primary"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> 地点：中关村 理想国际大厦</span>
                                 </h3>
                             </p>
 
                         </div>
                         <div class="text-center but1">
-                            <a class="btn btn-info btn-lg" href="#" onclick="loginPage()">活动详情</a>
+                            <a class="btn btn-info btn-lg" href="#" onclick="gotoIntroducePage()">活动详情</a>
                         </div>
                     </div>
                 </div>
-                <div  class="swiper-slide">
-                    1
+                <div  class="swiper-slide container">
+                    <div class="container">
+                        <div>
+                            <p class="lead bs-callout-warning">日程：<br>
+                                14:00-14:30 嘉宾签到<br>
+                                14:30-14:50 参会人员自我介绍<br>
+                                14:50-15:50 王佳 易BANK 风控总裁“金融产品创新”<br>
+                                15:50-16:50 冯炜 毕马威合伙人 “金融创新产品的税务政策”<br>
+                                16:50-17:20 张程 北京国税 “金融产品创新的稽查风险”<br>
+                                17:20-17:35 江舟 滴滴税务总监<br>
+                                17:35-18:00 互动交流环节
+                            16:50-17:20 张程 北京国税 “金融产品创新的稽查风险”<br>
+                            17:20-17:35 江舟 滴滴税务总监<br>
+                            17:35-18:00 互动交流环节</p>
+                            <img src="imgs/1.jpg" class="img-responsive img-thumbnail">
+                        </div>
+
+                    </div>
                 </div>
-                <div id="container" class="swiper-slide">
+
+                <div class="swiper-slide">
+                    <img src="imgs/1.jpg" class="img-responsive img-thumbnail">
+                    <p class="lead bs-callout-warning">日程：<br>
+                        14:00-14:30 嘉宾签到<br>
+                        14:30-14:50 参会人员自我介绍<br>
+                        14:50-15:50 王佳 易BANK 风控总裁“金融产品创新”<br>
+                        15:50-16:50 冯炜 毕马威合伙人 “金融创新产品的税务政策”<br>
+                        16:50-17:20 张程 北京国税 “金融产品创新的稽查风险”<br>
+                        17:20-17:35 江舟 滴滴税务总监<br>
+                        17:35-18:00 互动交流环节
+                        16:50-17:20 张程 北京国税 “金融产品创新的稽查风险”<br>
+                        17:20-17:35 江舟 滴滴税务总监<br>
+                        17:35-18:00 互动交流环节</p>
 
                 </div>
-                <div class="swiper-slide">
-                    3
+            <div  class="swiper-slide stop-swiping">
+                <div id="BaiduMap" class="container" style="height: 90%;width: 90%;margin-bottom: 15px">
                 </div>
+                <div class="row">
+                    <div class="col-xs-6 text-center">
+                        <button type="button" class="btn btn-primary " href="#" onclick="mainPage()">返回首页</button>
+                    </div>
+                    <div class="col-xs-6 text-center">
+                        <button type="button" class="btn btn-primary" href="#" onclick="loginPage()">前去注册</button>
+                    </div>
+                </div>
+
+
+            </div>
                 <div class="swiper-slide">
                     <div class="container">
                         <h1 class="text-center">新用户注册</h1>
-                        <form class="form-horizontal">
-                            <div class="form-group">
-                                <label for="username" class="col-sm-2 control-label">真实姓名</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="username" placeholder="请输入您的真实姓名">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputEmail" class="col-sm-2 control-label">邮箱</label>
-                                <div class="col-sm-10">
-                                    <input  type="email" class="form-control" id="inputEmail" placeholder="请输入您的电子邮箱地址">
-                                </div>
-                            </div>
-                            <div class="form-group">
+                        <form class="form-horizontal" name="form1"  method="post" action="regdo.php">
+                            <div id="Teldiv" class="form-group">
                                 <label for="inputTel" class="col-sm-2 control-label">手机号</label>
                                 <div class="col-sm-10">
-                                    <input  type="tel" class="form-control" id="inputTel" placeholder="请输入您的手机号">
+                                    <input  type="tel" class="form-control" id="inputTel" placeholder="请输入您的手机号" onblur="checkName()">
+                                    <span></span>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div id="usernameDiv" class="form-group">
+                                <label for="username" class="col-sm-2 control-label">真实姓名</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="username" placeholder="请输入您的真实姓名" onblur="checkEmail()">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div id="emailDiv" class="form-group">
+                                <label for="inputEmail" class="col-sm-2 control-label">邮箱</label>
+                                <div class="col-sm-10">
+                                    <input  type="email" class="form-control" id="inputEmail" placeholder="请输入您的电子邮箱地址" onblur="checkPassWord1()">
+                                    <span></span>
+                                </div>
+                            </div>
+
+                            <div id="pass1Div" class="form-group">
                                 <label for="inputPassword1" class="col-sm-2 control-label">设置密码</label>
                                 <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
+                                    <input type="password" class="form-control" id="inputPassword1" placeholder="密码长度限制在6-15位!" onblur="checkPassWord2()">
+                                    <span></span>
                                 </div>
                             </div>
-                            <!--<div class="form-group">-->
-                                <!--<label for="inputPassword2" class="col-sm-2 control-label">确认密码</label>-->
-                                <!--<div class="col-sm-10  has-success has-feedback">-->
-                                    <!--<input type="password" class="form-control" id="inputPassword2" placeholder="请保持一致密码">-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <div class="form-group has-success has-feedback">
+                            <div id="pass2Div" class="form-group">
                                 <label class="col-sm-2 control-label" for="inputSuccess2">确认密码</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputSuccess2" aria-describedby="inputSuccess2Status">
-                                <span class="glyphicon glyphicon-ok form-control-feedback"></span>
-                                <!--<span id="inputSuccess2Status" class="sr-only">(success)</span>-->
+                                    <input type="text" class="form-control" id="inputSuccess2" placeholder="请保持一致密码" aria-describedby="inputSuccess2Status" onblur="checkreg()">
+                                    <span></span>
                                 </div>
                             </div>
 
@@ -147,11 +207,130 @@
 </div>
 
 <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-<script src="js/swiper.3.1.7.jquery.min.js"></script>
+<script src="js/swiper.jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
 
 <script>
+    //注册
+    var check=true;
+    //-------------------------------------------------------------------------------------后台验证手机号
+    function TelCheck(){
+        if($("#inputTel").value==undefined || $("#inputTel").value==""){
+            $("#Teldiv").addClass("has-error has-feedback");
+            $("#Teldiv span").addClass("glyphicon glyphicon-remove form-control-feedback");
+            form1.username.focus();
+            check= false;
+        }
+        //---------------------------ajax
+
+    }
+    function TelCheckOk(){
+        $("#Teldiv").addClass("has-success");
+        $("#Teldiv span").addClass("glyphicon glyphicon-ok form-control-feedback");
+        check= true;
+    }
+    function TelCheckError(){
+        $("#Teldiv").addClass("has-error");
+        $("#Teldiv span").addClass("glyphicon glyphicon-remove form-control-feedback");
+        check= false;
+    }
+    //--------------------------------------------------------------------------------------------
+    //addClass('swiper-pagination-clickable');
+    function checkName() {
+        if (document.form1.username.value.length<4 || document.form1.username.value.length>15)
+        {
+            $("#usernameDiv").addClass("has-error");
+            $("#usernameDiv span").addClass("glyphicon glyphicon-remove form-control-feedback");
+            check= false;
+            $("#username").placeholder="用户名长度限制在4-15位!";
+            form1.username.focus();
+        }else{
+            $("#usernameDiv").addClass("has-success");
+            $("#usernameDiv span").addClass("glyphicon glyphicon-ok form-control-feedback");
+            check= true;
+        }
+    }
+    function checkEmail(){
+        if (document.form1.inputEmail.value=="")
+        {
+            $("#emailDiv").addClass("has-error");
+            $("#emailDiv span").addClass("glyphicon glyphicon-remove form-control-feedback");
+            check= false;
+            $("#emailDiv").placeholder="请输入您的Email地址!!";
+            form1.inputEmail.focus();
+            return false;
+        }else{
+            $("#emailDiv").addClass("has-success");
+            $("#emailDiv span").addClass("glyphicon glyphicon-ok form-control-feedback");
+            check= true;
+        }
+        var myRegex = /@.*\.[a-z]{2,6}/;
+        var email = form1.inputEmail.value;
+        email = email.replace(/^ | $/g,"");
+        email = email.replace(/^\.*|\.*$/g,"");
+        email = email.toLowerCase();
+
+        //验证电子邮件的有效性
+        if (email == "" || !myRegex.test(email))
+        {
+            $("#emailDiv").addClass("has-error");
+            $("#emailDiv span").addClass("glyphicon glyphicon-remove form-control-feedback");
+            check= false;
+            $("#emailDiv").placeholder="请输入您的Email地址!!";
+            form1.inputEmail.focus();
+            return false;
+        }else{
+            $("#emailDiv").addClass("has-success");
+            $("#emailDiv span").addClass("glyphicon glyphicon-ok form-control-feedback");
+            check= true;
+        }
+    }
+    function checkPassWord1(){
+        if (document.form1.inputPassword1.value=="")
+        {
+            $("#pass1Div").addClass("has-error");
+            $("#pass1Div span").addClass("glyphicon glyphicon-remove form-control-feedback");
+            check= false;
+            $("#pass1Div").placeholder="请输入密码!";
+            form1.inputPassword1.focus();
+            return false;
+        }else{
+            $("#pass1Div").addClass("has-success");
+            $("#pass1Div span").addClass("glyphicon glyphicon-ok form-control-feedback");
+            check= true;
+        }
+
+        if (document.form1.inputPassword1.value.length<6 || document.form1.inputPassword1.value.length>15)
+        {
+            $("#pass1Div").addClass("has-error");
+            $("#pass1Div span").addClass("glyphicon glyphicon-remove form-control-feedback");
+            check= false;
+            $("#pass1Div").placeholder="密码长度限制在6-15位!";
+            form1.inputPassword1.focus();
+            return false;
+        }else{
+            $("#pass1Div").addClass("has-success");
+            $("#pass1Div span").addClass("glyphicon glyphicon-ok form-control-feedback");
+            check= true;
+        }
+    }
+    function checkPassWord2(){
+        if(document.form1.inputPassword1.value!=document.form1.inputPassword2.value)
+        {
+            $("#pass2Div").addClass("has-error");
+            $("#pass1Div span").addClass("glyphicon glyphicon-remove form-control-feedback");
+            check= false;
+            $("#pass2Div").placeholder="两次输入的密码不同!";
+            form1.inputPassword2.focus();
+            return false;
+        }else{
+            $("#pass2Div").addClass("has-success");
+            $("#pass2Div span").addClass("glyphicon glyphicon-ok form-control-feedback");
+            check= true;
+        }
+    }
+
     var mySwiper = new Swiper('.swiper-container',{
         noSwiping : true,
         noSwipingClass : 'stop-swiping',
@@ -163,13 +342,22 @@
             shadowScale: 0.6
         }
     })
+    function gotoIntroducePage(){
+        mySwiper.slideTo(1);
+    }
     function loginPage(){
-        mySwiper.slideTo(1);//切换到第一个slide，速度为1秒
+        mySwiper.slideTo(4);//切换到第一个slide，速度为1秒
+    }
+    function mainPage(){
+        mySwiper.slideTo(0);
+    }
+    function MapPage(){
+        mySwiper.slideTo(3);
     }
 </script>
 
 <script type="text/javascript">
-    var map = new BMap.Map("container");          // 创建地图实例
+    var map = new BMap.Map("BaiduMap");          // 创建地图实例
     var point = new BMap.Point(116.404, 39.915);  // 创建点坐标
     map.centerAndZoom(point, 15);                 // 初始化地图，设置中心点坐标和地图级别
     //var marker = new BMap.Marker(new BMap.Point(116.404, 39.915));
