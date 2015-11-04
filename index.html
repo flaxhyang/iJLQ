@@ -42,7 +42,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <button id="navbarid" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">导航</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -150,37 +150,42 @@
                             <div id="Teldiv" class="form-group">
                                 <label for="inputTel" class="col-sm-2 control-label">手机号</label>
                                 <div class="col-sm-10">
-                                    <input  type="tel" class="form-control" id="inputTel" placeholder="请输入您的手机号" onblur="checkName()">
+                                    <input  type="tel" class="form-control" id="inputTel" placeholder="请输入您的手机号" onblur="TelCheck()" aria-describedby="helpBlock">
                                     <span></span>
+                                    <p id="helpBlock" class="help-block hide"></p>
                                 </div>
                             </div>
                             <div id="usernameDiv" class="form-group">
                                 <label for="username" class="col-sm-2 control-label">真实姓名</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="username" placeholder="请输入您的真实姓名" onblur="checkEmail()">
+                                    <input type="text" class="form-control" id="username" placeholder="请输入您的真实姓名" onblur="checkName()" aria-describedby="nameHelpBlock">
                                     <span></span>
+                                    <p id="nameHelpBlock" class="help-block hide"></p>
                                 </div>
                             </div>
                             <div id="emailDiv" class="form-group">
                                 <label for="inputEmail" class="col-sm-2 control-label">邮箱</label>
                                 <div class="col-sm-10">
-                                    <input  type="email" class="form-control" id="inputEmail" placeholder="请输入您的电子邮箱地址" onblur="checkPassWord1()">
+                                    <input  type="email" class="form-control" id="inputEmail" placeholder="请输入您的电子邮箱地址" onblur="checkEmail()" aria-describedby="emailHelpBlock">
                                     <span></span>
+                                    <p id="emailHelpBlock" class="help-block hide"></p>
                                 </div>
                             </div>
 
                             <div id="pass1Div" class="form-group">
                                 <label for="inputPassword1" class="col-sm-2 control-label">设置密码</label>
                                 <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="inputPassword1" placeholder="密码长度限制在6-15位!" onblur="checkPassWord2()">
+                                    <input type="password" class="form-control" id="inputPassword1" placeholder="密码长度限制在6-15位!" onblur="checkPassWord1()" aria-describedby="pwHelpBlock">
                                     <span></span>
+                                    <p id="pwHelpBlock" class="help-block hide"></p>
                                 </div>
                             </div>
                             <div id="pass2Div" class="form-group">
                                 <label class="col-sm-2 control-label" for="inputSuccess2">确认密码</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputSuccess2" placeholder="请保持一致密码" aria-describedby="inputSuccess2Status" onblur="checkreg()">
+                                    <input type="password" class="form-control" id="inputSuccess2" placeholder="请保持一致密码" aria-describedby="inputSuccess2Status" onblur="checkPassWord2()" aria-describedby="pw2HelpBlock">
                                     <span></span>
+                                    <p id="pw2HelpBlock" class="help-block hide"></p>
                                 </div>
                             </div>
 
@@ -188,14 +193,14 @@
                                 <div class="col-sm-offset-2 col-sm-10">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox"> Remember me
+                                            <input id="comfirm" type="checkbox" onclick="submitCheck()"> Remember me
                                         </label>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-info btn-lg">Sign in</button>
+                                    <button id="signBtn" type="button" class="btn btn-info btn-lg" disabled="disabled" onclick="submitData()">Sign in</button>
                                 </div>
                             </div>
                         </form>
@@ -212,58 +217,104 @@
 
 
 <script>
+
+    function demo(){
+        console.log($("#demo").attr("checked")=="checked")
+    }
+
     //注册
-    var check=true;
+    var telCheck=false;
+    var NameCheck=false;
+    var emailCheck=false;
+    var pwCheck=false;
+
+    var check=false;
     //-------------------------------------------------------------------------------------后台验证手机号
     function TelCheck(){
-        if($("#inputTel").value==undefined || $("#inputTel").value==""){
-            $("#Teldiv").addClass("has-error has-feedback");
-            $("#Teldiv span").addClass("glyphicon glyphicon-remove form-control-feedback");
-            form1.username.focus();
-            check= false;
+        $("#Teldiv").removeClass("has-error has-feedback");
+        $("#Teldiv span").removeClass("glyphicon glyphicon-remove form-control-feedback");
+        $("#Teldiv").removeClass("has-error has-feedback");
+        $("#Teldiv span").removeClass("glyphicon glyphicon-remove form-control-feedback");
+        $("#helpBlock").removeClass("show");
+        $("#helpBlock").addClass("hide");
+        if(document.form1.inputTel.value==""){
+            TelCheckError("此为必填项！");
+            submitCheck();
+        }else{
+            var regBox = {regMobile : /^0?1[3|4|5|8][0-9]\d{8}$/};
+            var mflag = regBox.regMobile.test(document.form1.inputTel.value);
+            if(mflag){
+                TelCheckOk();
+            }else{
+                TelCheckError("请正确填写手机号码！");
+            }
+            //-------------------------------------------------------------------------------------------ajax
+            //"此号码已被注册！请更换号码！"
+            //---------temp
+            //TelCheckOk();
+            //--------temp
         }
-        //---------------------------ajax
+
 
     }
     function TelCheckOk(){
-        $("#Teldiv").addClass("has-success");
+        $("#Teldiv").addClass("has-success has-feedback");
         $("#Teldiv span").addClass("glyphicon glyphicon-ok form-control-feedback");
-        check= true;
+        telCheck= true;
+        submitCheck();
     }
-    function TelCheckError(){
-        $("#Teldiv").addClass("has-error");
+    function TelCheckError(txt){
+        $("#Teldiv").addClass("has-error has-feedback");
         $("#Teldiv span").addClass("glyphicon glyphicon-remove form-control-feedback");
-        check= false;
+        $("#helpBlock").addClass("show");
+        $("#helpBlock").html(txt);
+        form1.inputTel.focus();
+        telCheck= false;
+        submitCheck();
     }
     //--------------------------------------------------------------------------------------------
     //addClass('swiper-pagination-clickable');
     function checkName() {
-        if (document.form1.username.value.length<4 || document.form1.username.value.length>15)
+        $("#usernameDiv").removeClass("has-error has-feedback");
+        $("#usernameDiv span").removeClass("glyphicon glyphicon-remove form-control-feedback");
+        $("#usernameDiv").removeClass("has-success has-feedback");
+        $("#usernameDiv span").removeClass("glyphicon glyphicon-ok form-control-feedback");
+        $("#nameHelpBlock").removeClass("show");
+        $("#nameHelpBlock").addClass("hide");
+        if (document.form1.username.value.length<2 || document.form1.username.value.length>15)
         {
-            $("#usernameDiv").addClass("has-error");
+            $("#usernameDiv").addClass("has-error has-feedback");
             $("#usernameDiv span").addClass("glyphicon glyphicon-remove form-control-feedback");
-            check= false;
-            $("#username").placeholder="用户名长度限制在4-15位!";
+            $("#nameHelpBlock").addClass("show");
+            $("#nameHelpBlock").html("用户名长度限制在2-15个字符!");
             form1.username.focus();
+            NameCheck= false;
         }else{
-            $("#usernameDiv").addClass("has-success");
+            $("#usernameDiv").addClass("has-success has-feedback");
             $("#usernameDiv span").addClass("glyphicon glyphicon-ok form-control-feedback");
-            check= true;
+            NameCheck= true;
         }
+        submitCheck();
     }
     function checkEmail(){
+        $("#emailDiv").removeClass("has-error has-feedback");
+        $("#emailDiv span").removeClass("glyphicon glyphicon-remove form-control-feedback");
+        $("#emailDiv").removeClass("has-success has-feedback");
+        $("#emailDiv span").removeClass("glyphicon glyphicon-ok form-control-feedback");
+        $("#emailHelpBlock").removeClass("show");
+        $("#emailHelpBlock").addClass("hide");
         if (document.form1.inputEmail.value=="")
         {
-            $("#emailDiv").addClass("has-error");
+            $("#emailDiv").addClass("has-error has-feedback");
             $("#emailDiv span").addClass("glyphicon glyphicon-remove form-control-feedback");
-            check= false;
-            $("#emailDiv").placeholder="请输入您的Email地址!!";
+            emailCheck= false;
+            $("#emailHelpBlock").addClass("show");
+            $("#emailHelpBlock").html("请输入您的Email地址!");
             form1.inputEmail.focus();
-            return false;
         }else{
-            $("#emailDiv").addClass("has-success");
+            $("#emailDiv").addClass("has-success has-feedback");
             $("#emailDiv span").addClass("glyphicon glyphicon-ok form-control-feedback");
-            check= true;
+            emailCheck= true;
         }
         var myRegex = /@.*\.[a-z]{2,6}/;
         var email = form1.inputEmail.value;
@@ -274,63 +325,85 @@
         //验证电子邮件的有效性
         if (email == "" || !myRegex.test(email))
         {
-            $("#emailDiv").addClass("has-error");
+            $("#emailDiv").addClass("has-error has-feedback");
             $("#emailDiv span").addClass("glyphicon glyphicon-remove form-control-feedback");
-            check= false;
-            $("#emailDiv").placeholder="请输入您的Email地址!!";
+            emailCheck= false;
+            $("#emailHelpBlock").addClass("show");
+            $("#emailHelpBlock").html("请输入您的有效Email地址!");
             form1.inputEmail.focus();
-            return false;
         }else{
-            $("#emailDiv").addClass("has-success");
+            $("#emailDiv").addClass("has-success has-feedback");
             $("#emailDiv span").addClass("glyphicon glyphicon-ok form-control-feedback");
-            check= true;
+            emailCheck= true;
         }
+        submitCheck();
     }
     function checkPassWord1(){
-        if (document.form1.inputPassword1.value=="")
-        {
-            $("#pass1Div").addClass("has-error");
-            $("#pass1Div span").addClass("glyphicon glyphicon-remove form-control-feedback");
-            check= false;
-            $("#pass1Div").placeholder="请输入密码!";
-            form1.inputPassword1.focus();
-            return false;
-        }else{
-            $("#pass1Div").addClass("has-success");
-            $("#pass1Div span").addClass("glyphicon glyphicon-ok form-control-feedback");
-            check= true;
-        }
-
+        $("#pass1Div").removeClass("has-error has-feedback");
+        $("#pass1Div span").removeClass("glyphicon glyphicon-remove form-control-feedback");
+        $("#pass1Div").removeClass("has-success has-feedback");
+        $("#pass1Div span").removeClass("glyphicon glyphicon-ok form-control-feedback");
+        $("#pwHelpBlock").removeClass("show");
+        $("#pwHelpBlock").addClass("hide");
         if (document.form1.inputPassword1.value.length<6 || document.form1.inputPassword1.value.length>15)
         {
-            $("#pass1Div").addClass("has-error");
+            $("#pass1Div").addClass("has-error has-feedback");
             $("#pass1Div span").addClass("glyphicon glyphicon-remove form-control-feedback");
-            check= false;
-            $("#pass1Div").placeholder="密码长度限制在6-15位!";
+            pwCheck= false;
+            $("#pwHelpBlock").addClass("show");
+            $("#pwHelpBlock").html("密码长度限制在6-15位!");
             form1.inputPassword1.focus();
-            return false;
         }else{
-            $("#pass1Div").addClass("has-success");
+            $("#pass1Div").addClass("has-success has-feedback");
             $("#pass1Div span").addClass("glyphicon glyphicon-ok form-control-feedback");
-            check= true;
+            pwCheck= true;
         }
+        submitCheck();
     }
     function checkPassWord2(){
-        if(document.form1.inputPassword1.value!=document.form1.inputPassword2.value)
+        $("#pass2Div").removeClass("has-error has-feedback");
+        $("#pass2Div span").removeClass("glyphicon glyphicon-remove form-control-feedback");
+        $("#pass2Div").removeClass("has-success has-feedback");
+        $("#pass2Div span").removeClass("glyphicon glyphicon-ok form-control-feedback");
+        $("#pw2HelpBlock").removeClass("show");
+        $("#pw2HelpBlock").addClass("hide");
+        if(document.form1.inputPassword1.value!=document.form1.inputSuccess2.value)
         {
-            $("#pass2Div").addClass("has-error");
-            $("#pass1Div span").addClass("glyphicon glyphicon-remove form-control-feedback");
-            check= false;
-            $("#pass2Div").placeholder="两次输入的密码不同!";
-            form1.inputPassword2.focus();
-            return false;
+            $("#pass2Div").addClass("has-error has-feedback");
+            $("#pass2Div span").addClass("glyphicon glyphicon-remove form-control-feedback");
+            pwCheck= false;
+            $("#pw2HelpBlock").addClass("show");
+            $("#pw2HelpBlock").html("两次输入的密码不同!");
+            form1.inputSuccess2.focus();
         }else{
-            $("#pass2Div").addClass("has-success");
+            $("#pass2Div").addClass("has-success has-feedback");
             $("#pass2Div span").addClass("glyphicon glyphicon-ok form-control-feedback");
-            check= true;
+            pwCheck= true;
+        }
+        submitCheck();
+    }
+
+    function submitCheck(){
+        if($("#comfirm").is(':checked') && telCheck && NameCheck && emailCheck && pwCheck){
+            $("#signBtn").removeAttr("disabled");
+            console.log("ok");
+            check=true;
+        }else{
+            $("#signBtn").attr("disabled","disabled");
+            console.log("error");
+            check=false;
         }
     }
 
+    function submitData(){
+        checkName();
+        checkEmail();
+        checkPassWord1();
+        checkPassWord2();
+        if(check) {
+            document.form1.submit();
+        }
+    }
     var mySwiper = new Swiper('.swiper-container',{
         noSwiping : true,
         noSwipingClass : 'stop-swiping',
@@ -346,12 +419,15 @@
         mySwiper.slideTo(1);
     }
     function loginPage(){
+        $('#navbar').collapse('toggle');
         mySwiper.slideTo(4);//切换到第一个slide，速度为1秒
     }
     function mainPage(){
+        $('#navbar').collapse('toggle');
         mySwiper.slideTo(0);
     }
     function MapPage(){
+        $('#navbar').collapse('toggle');
         mySwiper.slideTo(3);
     }
 </script>
