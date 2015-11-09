@@ -75,22 +75,24 @@
                                 15:50-16:50 冯炜 毕马威合伙人 “金融创新产品的税务政策”<br>
                                 16:50-17:20 张程 北京国税 “金融产品创新的稽查风险”<br>
                                 17:20-17:35 江舟 滴滴税务总监<br>
-                                17:35-18:00 互动交流环节</blockquote>
+                                17:35-18:00 互动交流环节
+                            </blockquote>
                         </div>
-                        <div class="lead">
-                            <p>
-                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                                活动时间：2015.10.26
-                            </p>
-                            <p>
-                                <h3 onclick="MapPage()">
-                                <span class="label label-primary"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> 地点：中关村 理想国际大厦</span>
-                                </h3>
-                            </p>
-
-                        </div>
-                        <div class="text-center but1">
-                            <a class="btn btn-info btn-lg" href="#" onclick="gotoIntroducePage()">活动详情</a>
+                        <div>
+                            <div class="lead">
+                                <p>
+                                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                    活动时间：2015.10.26
+                                </p>
+                                <p>
+                                    <h3 onclick="MapPage()">
+                                    <span class="label label-primary"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> 地点：中关村 理想国际大厦</span>
+                                    </h3>
+                                </p>
+                            </div>
+                            <div class="text-center but1">
+                                <a class="btn btn-info btn-lg" href="#" onclick="gotoIntroducePage()">活动详情</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -130,17 +132,22 @@
 
                 </div>
             <div  class="swiper-slide stop-swiping">
-                <div id="BaiduMap" class="container" style="height: 90%;width: 90%;margin-bottom: 15px">
+                <!--<div id="mapMask" style="height: 100%">-->
+                <div id="BaiduMap" class="container" style="height: 100%;width: 100%;">
                 </div>
-                <div class="row">
-                    <div class="col-xs-6 text-center">
-                        <button type="button" class="btn btn-primary " href="#" onclick="mySwiper.slideTo(0)">返回首页</button>
-                    </div>
-                    <div class="col-xs-6 text-center">
-                        <button type="button" class="btn btn-primary" href="#" onclick="mySwiper.slideTo(4)">前去注册</button>
-                    </div>
+                <!--</div>-->
+                <div class="mapBar1">
+                    <h4><a>活动地点</a></h4>
+                    <p><a>龙源7号-朝阳区高碑店南街1062号</a></p>
                 </div>
-
+                <!--<div class="row">-->
+                    <!--<div class="col-xs-6 text-center">-->
+                        <!--<button type="button" class="btn btn-primary " href="#" onclick="mySwiper.slideTo(0)">返回首页</button>-->
+                    <!--</div>-->
+                    <!--<div class="col-xs-6 text-center">-->
+                        <!--<button type="button" class="btn btn-primary" href="#" onclick="mySwiper.slideTo(4)">前去注册</button>-->
+                    <!--</div>-->
+                <!--</div>-->
 
             </div>
                 <div class="swiper-slide">
@@ -431,13 +438,15 @@
         mySwiper.slideTo(3);
     }
 </script>
-
+//----------------------------------------------------------------------------------map
 <script type="text/javascript">
     var map = new BMap.Map("BaiduMap");          // 创建地图实例
     var point = new BMap.Point(116.404, 39.915);  // 创建点坐标
-    map.centerAndZoom(point, 15);                 // 初始化地图，设置中心点坐标和地图级别
+    map.centerAndZoom(point, 20);                 // 初始化地图，设置中心点坐标和地图级别
     //var marker = new BMap.Marker(new BMap.Point(116.404, 39.915));
     map.addOverlay(new BMap.Marker(point));
+
+
 </script>
 </body>
 </html>

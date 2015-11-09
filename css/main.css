@@ -33,3 +33,11 @@ body{
     border-left-color: #1b809e;
 }
 
+.mapBar1{
+    position: absolute;
+    width: 100%;
+    height: 15%;
+    background-color: #ffffff;
+    bottom: 0px;
+    padding-left: 5%;
+}
