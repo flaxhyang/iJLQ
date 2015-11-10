@@ -26,19 +26,6 @@
 
 <body>
 
-<!--<nav class="navbar navbar-default navbar-fixed-top">-->
-    <!--<div class="container">-->
-        <!--<div class="navbar-header">-->
-            <!--<ul class="nav pull-right nav-pills">-->
-                <!--<li><a href="#" onclick="loginPage()">首页</a> </li>-->
-                <!--<li><a href="#" onclick="loginPage()">我要报名</a> </li>-->
-            <!--</ul>-->
-            <!--<h2><em>金领圈<small>JLQ</small></em></h2>-->
-        <!--</div>-->
-
-    <!--</div>-->
-<!--</nav>-->
-
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -71,9 +58,7 @@
                             <blockquote class="lead bs-callout-warning">日程：<br>
                                 14:00-14:30 嘉宾签到<br>
                                 14:30-14:50 参会人员自我介绍<br>
-                                14:50-15:50 王佳 易BANK 风控总裁“金融产品创新”<br>
                                 15:50-16:50 冯炜 毕马威合伙人 “金融创新产品的税务政策”<br>
-                                16:50-17:20 张程 北京国税 “金融产品创新的稽查风险”<br>
                                 17:20-17:35 江舟 滴滴税务总监<br>
                                 17:35-18:00 互动交流环节
                             </blockquote>
@@ -137,9 +122,19 @@
                 </div>
                 <!--</div>-->
                 <div class="mapBar1">
-                    <h4><a>活动地点</a></h4>
-                    <p><a>龙源7号-朝阳区高碑店南街1062号</a></p>
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <h4><a>活动地点</a></h4>
+                            <p><a onclick="gotomy()"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>龙源7号-朝阳区高碑店南街1062号</a></p>
+                        </div>
+                        <div class="col-xs-4">
+                            <h3>
+                                <span class="label label-primary" ><span class="glyphicon glyphicon-road" aria-hidden="true"></span>导航</span>
+                            </h3>
+                        </div>
+                    </div>
                 </div>
+
                 <!--<div class="row">-->
                     <!--<div class="col-xs-6 text-center">-->
                         <!--<button type="button" class="btn btn-primary " href="#" onclick="mySwiper.slideTo(0)">返回首页</button>-->
@@ -150,7 +145,7 @@
                 <!--</div>-->
 
             </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide stop-swiping">
                     <div class="container">
                         <h1 class="text-center">新用户注册</h1>
                         <form class="form-horizontal" name="form1"  method="post" action="regdo.php">
@@ -446,7 +441,11 @@
     //var marker = new BMap.Marker(new BMap.Point(116.404, 39.915));
     map.addOverlay(new BMap.Marker(point));
 
+    function gotomy(){
 
+
+
+    }
 </script>
 </body>
 </html>
