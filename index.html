@@ -7,21 +7,17 @@
     <!--<link rel="icon" href="../../favicon.ico"> -->
     <title>金领圈</title>
     <!-- Bootstrap core CSS -->
-   <!-- <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"> -->
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/swiper.3.1.7.min.css" rel="stylesheet">
+    <link href="css/swiper.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-   <!-- <link href="starter-template.css" rel="stylesheet">-->
+    <!-- <link href="starter-template.css" rel="stylesheet">-->
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]>
     <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=m9NbZNsf9dK0p87DgDYDDHWr">
-        //v1.5版本的引用方式：src="http://api.map.baidu.com/api?v=1.5&ak=您的密钥"
-        //v1.4版本及以前版本的引用方式：src="http://api.map.baidu.com/api?v=1.4&key=您的密钥&callback=initialize"
-    </script>
 </head>
 
 <body>
@@ -29,13 +25,21 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <button id="navbarid" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <button id="navbarid" type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">导航</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">金领圈</a>
+            <!--<a class="navbar-brand" href="#">金领圈</a>-->
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#" style="padding: 8px;">
+                        <img alt="Brand" src="imgs/jlqlogo.png" height="100%">
+                    </a>
+                </div>
+            </div>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -43,66 +47,70 @@
                 <li><a href="#" onclick="loginPage()">注册</a></li>
                 <li><a href="#" onclick="MapPage()">地图</a></li>
             </ul>
-        </div><!--/.nav-collapse -->
+        </div>
+        <!--/.nav-collapse -->
     </div>
 </nav>
 
-
 <div class="mainContainer">
-    <div class="swiper-container">
+    <div class="swiper-container" style=" height:auto;">
         <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="container">
-                        <div>
-                            <h2>金领圈-互联网金融面临的风险与未来</h2>
-                            <blockquote class="lead bs-callout-warning">日程：<br>
-                                14:00-14:30 嘉宾签到<br>
-                                14:30-14:50 参会人员自我介绍<br>
-                                15:50-16:50 冯炜 毕马威合伙人 “金融创新产品的税务政策”<br>
-                                17:20-17:35 江舟 滴滴税务总监<br>
-                                17:35-18:00 互动交流环节
-                            </blockquote>
+            <div class="swiper-slide">
+                <div class="container">
+                    <div>
+                        <h2>金领圈-互联网金融面临的风险与未来</h2>
+                        <blockquote class="lead bs-callout-warning">日程：<br>
+                            14:00-14:30 嘉宾签到<br>
+                            14:30-14:50 参会人员自我介绍<br>
+                            15:50-16:50 冯炜 毕马威合伙人 “金融创新产品的税务政策”<br>
+                            17:20-17:35 江舟 滴滴税务总监<br>
+                            17:35-18:00 互动交流环节
+                        </blockquote>
+                    </div>
+                    <div>
+                        <div class="lead">
+                            <p>
+                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                活动时间：2015.10.26
+                            </p>
+
+                            <p>
+
+                            <h3 onclick="MapPage()">
+                                <span class="label label-primary"><span class="glyphicon glyphicon-globe"
+                                                                        aria-hidden="true"></span> 地点：中关村 理想国际大厦</span>
+                            </h3>
+                            </p>
                         </div>
-                        <div>
-                            <div class="lead">
-                                <p>
-                                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                                    活动时间：2015.10.26
-                                </p>
-                                <p>
-                                    <h3 onclick="MapPage()">
-                                    <span class="label label-primary"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> 地点：中关村 理想国际大厦</span>
-                                    </h3>
-                                </p>
-                            </div>
-                            <div class="text-center but1">
-                                <a class="btn btn-info btn-lg" href="#" onclick="gotoIntroducePage()">活动详情</a>
-                            </div>
+                        <div class="text-center but1">
+                            <a class="btn btn-info btn-lg" href="#" onclick="gotoIntroducePage()">活动详情</a>
                         </div>
                     </div>
                 </div>
-                <div  class="swiper-slide container">
-                    <div class="container">
-                        <div>
-                            <p class="lead bs-callout-warning">日程：<br>
-                                14:00-14:30 嘉宾签到<br>
-                                14:30-14:50 参会人员自我介绍<br>
-                                14:50-15:50 王佳 易BANK 风控总裁“金融产品创新”<br>
-                                15:50-16:50 冯炜 毕马威合伙人 “金融创新产品的税务政策”<br>
-                                16:50-17:20 张程 北京国税 “金融产品创新的稽查风险”<br>
-                                17:20-17:35 江舟 滴滴税务总监<br>
-                                17:35-18:00 互动交流环节
+            </div>
+            <div class="swiper-slide">
+                <div class="container" style="height: 100%;width: 90%;">
+                    <div>
+                        <p class="lead bs-callout-warning">日程：<br>
+                            14:00-14:30 嘉宾签到<br>
+                            14:30-14:50 参会人员自我介绍<br>
+                            14:50-15:50 王佳 易BANK 风控总裁“金融产品创新”<br>
+                            15:50-16:50 冯炜 毕马威合伙人 “金融创新产品的税务政策”<br>
+                            16:50-17:20 张程 北京国税 “金融产品创新的稽查风险”<br>
+                            17:20-17:35 江舟 滴滴税务总监<br>
+                            17:35-18:00 互动交流环节
                             16:50-17:20 张程 北京国税 “金融产品创新的稽查风险”<br>
                             17:20-17:35 江舟 滴滴税务总监<br>
                             17:35-18:00 互动交流环节</p>
-                            <img src="imgs/1.jpg" class="img-responsive img-thumbnail">
-                        </div>
-
+                        <img src="imgs/1.jpg" class="img-responsive img-thumbnail">
                     </div>
-                </div>
 
-                <div class="swiper-slide">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="container" style="height: 100%;width: 90%;">
                     <img src="imgs/1.jpg" class="img-responsive img-thumbnail">
+
                     <p class="lead bs-callout-warning">日程：<br>
                         14:00-14:30 嘉宾签到<br>
                         14:30-14:50 参会人员自我介绍<br>
@@ -113,105 +121,16 @@
                         17:35-18:00 互动交流环节
                         16:50-17:20 张程 北京国税 “金融产品创新的稽查风险”<br>
                         17:20-17:35 江舟 滴滴税务总监<br>
-                        17:35-18:00 互动交流环节</p>
-
+                        17:35-18:00 互动交流环节
+                    </p>
                 </div>
-            <div  class="swiper-slide stop-swiping">
-                <!--<div id="mapMask" style="height: 100%">-->
-                <div id="BaiduMap" class="container" style="height: 100%;width: 100%;">
-                </div>
-                <!--</div>-->
-                <div class="mapBar1">
-                    <div class="row">
-                        <div class="col-xs-8">
-                            <h4><a>活动地点</a></h4>
-                            <p><a onclick="gotomy()"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>龙源7号-朝阳区高碑店南街1062号</a></p>
-                        </div>
-                        <div class="col-xs-4">
-                            <h3>
-                                <span class="label label-primary" ><span class="glyphicon glyphicon-road" aria-hidden="true"></span>导航</span>
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-
-                <!--<div class="row">-->
-                    <!--<div class="col-xs-6 text-center">-->
-                        <!--<button type="button" class="btn btn-primary " href="#" onclick="mySwiper.slideTo(0)">返回首页</button>-->
-                    <!--</div>-->
-                    <!--<div class="col-xs-6 text-center">-->
-                        <!--<button type="button" class="btn btn-primary" href="#" onclick="mySwiper.slideTo(4)">前去注册</button>-->
-                    <!--</div>-->
-                <!--</div>-->
-
             </div>
-                <div class="swiper-slide stop-swiping">
-                    <div class="container">
-                        <h1 class="text-center">新用户注册</h1>
-                        <form class="form-horizontal" name="form1"  method="post" action="regdo.php">
-                            <div id="Teldiv" class="form-group">
-                                <label for="inputTel" class="col-sm-2 control-label">手机号</label>
-                                <div class="col-sm-10">
-                                    <input  type="tel" class="form-control" id="inputTel" placeholder="请输入您的手机号" onblur="TelCheck()" aria-describedby="helpBlock">
-                                    <span></span>
-                                    <p id="helpBlock" class="help-block hide"></p>
-                                </div>
-                            </div>
-                            <div id="usernameDiv" class="form-group">
-                                <label for="username" class="col-sm-2 control-label">真实姓名</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="username" placeholder="请输入您的真实姓名" onblur="checkName()" aria-describedby="nameHelpBlock">
-                                    <span></span>
-                                    <p id="nameHelpBlock" class="help-block hide"></p>
-                                </div>
-                            </div>
-                            <div id="emailDiv" class="form-group">
-                                <label for="inputEmail" class="col-sm-2 control-label">邮箱</label>
-                                <div class="col-sm-10">
-                                    <input  type="email" class="form-control" id="inputEmail" placeholder="请输入您的电子邮箱地址" onblur="checkEmail()" aria-describedby="emailHelpBlock">
-                                    <span></span>
-                                    <p id="emailHelpBlock" class="help-block hide"></p>
-                                </div>
-                            </div>
-
-                            <div id="pass1Div" class="form-group">
-                                <label for="inputPassword1" class="col-sm-2 control-label">设置密码</label>
-                                <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="inputPassword1" placeholder="密码长度限制在6-15位!" onblur="checkPassWord1()" aria-describedby="pwHelpBlock">
-                                    <span></span>
-                                    <p id="pwHelpBlock" class="help-block hide"></p>
-                                </div>
-                            </div>
-                            <div id="pass2Div" class="form-group">
-                                <label class="col-sm-2 control-label" for="inputSuccess2">确认密码</label>
-                                <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="inputSuccess2" placeholder="请保持一致密码" aria-describedby="inputSuccess2Status" onblur="checkPassWord2()" aria-describedby="pw2HelpBlock">
-                                    <span></span>
-                                    <p id="pw2HelpBlock" class="help-block hide"></p>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input id="comfirm" type="checkbox" onclick="submitCheck()"> Remember me
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="text-center">
-                                    <button id="signBtn" type="button" class="btn btn-info btn-lg" disabled="disabled" onclick="submitData()">Sign in</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="swiper-slide stop-swiping">注册成功</div>
         </div>
     </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
 </div>
+
 
 <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/swiper.jquery.js"></script>
@@ -219,233 +138,42 @@
 
 
 <script>
-
-    function demo(){
-        console.log($("#demo").attr("checked")=="checked")
-    }
-
-    //注册
-    var telCheck=false;
-    var NameCheck=false;
-    var emailCheck=false;
-    var pwCheck=false;
-
-    var check=false;
-    //-------------------------------------------------------------------------------------后台验证手机号
-    function TelCheck(){
-        $("#Teldiv").removeClass("has-error has-feedback");
-        $("#Teldiv span").removeClass("glyphicon glyphicon-remove form-control-feedback");
-        $("#Teldiv").removeClass("has-error has-feedback");
-        $("#Teldiv span").removeClass("glyphicon glyphicon-remove form-control-feedback");
-        $("#helpBlock").removeClass("show");
-        $("#helpBlock").addClass("hide");
-        if(document.form1.inputTel.value==""){
-            TelCheckError("此为必填项！");
-            submitCheck();
-        }else{
-            var regBox = {regMobile : /^0?1[3|4|5|8][0-9]\d{8}$/};
-            var mflag = regBox.regMobile.test(document.form1.inputTel.value);
-            if(mflag){
-                //-------------------------------------------------------------------------------------------ajax
-                //"此号码已被注册！请更换号码！"
-                //---------temp
-                TelCheckOk();
-                //--------temp
-            }else{
-                TelCheckError("请正确填写手机号码！");
-            }
-
-        }
-
-
-    }
-    function TelCheckOk(){
-        $("#Teldiv").addClass("has-success has-feedback");
-        $("#Teldiv span").addClass("glyphicon glyphicon-ok form-control-feedback");
-        telCheck= true;
-        submitCheck();
-    }
-    function TelCheckError(txt){
-        $("#Teldiv").addClass("has-error has-feedback");
-        $("#Teldiv span").addClass("glyphicon glyphicon-remove form-control-feedback");
-        $("#helpBlock").addClass("show");
-        $("#helpBlock").html(txt);
-        form1.inputTel.focus();
-        telCheck= false;
-        submitCheck();
-    }
-    //--------------------------------------------------------------------------------------------
-    //addClass('swiper-pagination-clickable');
-    function checkName() {
-        $("#usernameDiv").removeClass("has-error has-feedback");
-        $("#usernameDiv span").removeClass("glyphicon glyphicon-remove form-control-feedback");
-        $("#usernameDiv").removeClass("has-success has-feedback");
-        $("#usernameDiv span").removeClass("glyphicon glyphicon-ok form-control-feedback");
-        $("#nameHelpBlock").removeClass("show");
-        $("#nameHelpBlock").addClass("hide");
-        if (document.form1.username.value.length<2 || document.form1.username.value.length>15)
-        {
-            $("#usernameDiv").addClass("has-error has-feedback");
-            $("#usernameDiv span").addClass("glyphicon glyphicon-remove form-control-feedback");
-            $("#nameHelpBlock").addClass("show");
-            $("#nameHelpBlock").html("用户名长度限制在2-15个字符!");
-            form1.username.focus();
-            NameCheck= false;
-        }else{
-            $("#usernameDiv").addClass("has-success has-feedback");
-            $("#usernameDiv span").addClass("glyphicon glyphicon-ok form-control-feedback");
-            NameCheck= true;
-        }
-        submitCheck();
-    }
-    function checkEmail(){
-        $("#emailDiv").removeClass("has-error has-feedback");
-        $("#emailDiv span").removeClass("glyphicon glyphicon-remove form-control-feedback");
-        $("#emailDiv").removeClass("has-success has-feedback");
-        $("#emailDiv span").removeClass("glyphicon glyphicon-ok form-control-feedback");
-        $("#emailHelpBlock").removeClass("show");
-        $("#emailHelpBlock").addClass("hide");
-        if (document.form1.inputEmail.value=="")
-        {
-            $("#emailDiv").addClass("has-error has-feedback");
-            $("#emailDiv span").addClass("glyphicon glyphicon-remove form-control-feedback");
-            emailCheck= false;
-            $("#emailHelpBlock").addClass("show");
-            $("#emailHelpBlock").html("请输入您的Email地址!");
-            form1.inputEmail.focus();
-        }else{
-            $("#emailDiv").addClass("has-success has-feedback");
-            $("#emailDiv span").addClass("glyphicon glyphicon-ok form-control-feedback");
-            emailCheck= true;
-        }
-        var myRegex = /@.*\.[a-z]{2,6}/;
-        var email = form1.inputEmail.value;
-        email = email.replace(/^ | $/g,"");
-        email = email.replace(/^\.*|\.*$/g,"");
-        email = email.toLowerCase();
-
-        //验证电子邮件的有效性
-        if (email == "" || !myRegex.test(email))
-        {
-            $("#emailDiv").addClass("has-error has-feedback");
-            $("#emailDiv span").addClass("glyphicon glyphicon-remove form-control-feedback");
-            emailCheck= false;
-            $("#emailHelpBlock").addClass("show");
-            $("#emailHelpBlock").html("请输入您的有效Email地址!");
-            form1.inputEmail.focus();
-        }else{
-            $("#emailDiv").addClass("has-success has-feedback");
-            $("#emailDiv span").addClass("glyphicon glyphicon-ok form-control-feedback");
-            emailCheck= true;
-        }
-        submitCheck();
-    }
-    function checkPassWord1(){
-        $("#pass1Div").removeClass("has-error has-feedback");
-        $("#pass1Div span").removeClass("glyphicon glyphicon-remove form-control-feedback");
-        $("#pass1Div").removeClass("has-success has-feedback");
-        $("#pass1Div span").removeClass("glyphicon glyphicon-ok form-control-feedback");
-        $("#pwHelpBlock").removeClass("show");
-        $("#pwHelpBlock").addClass("hide");
-        if (document.form1.inputPassword1.value.length<6 || document.form1.inputPassword1.value.length>15)
-        {
-            $("#pass1Div").addClass("has-error has-feedback");
-            $("#pass1Div span").addClass("glyphicon glyphicon-remove form-control-feedback");
-            pwCheck= false;
-            $("#pwHelpBlock").addClass("show");
-            $("#pwHelpBlock").html("密码长度限制在6-15位!");
-            form1.inputPassword1.focus();
-        }else{
-            $("#pass1Div").addClass("has-success has-feedback");
-            $("#pass1Div span").addClass("glyphicon glyphicon-ok form-control-feedback");
-            pwCheck= true;
-        }
-        submitCheck();
-    }
-    function checkPassWord2(){
-        $("#pass2Div").removeClass("has-error has-feedback");
-        $("#pass2Div span").removeClass("glyphicon glyphicon-remove form-control-feedback");
-        $("#pass2Div").removeClass("has-success has-feedback");
-        $("#pass2Div span").removeClass("glyphicon glyphicon-ok form-control-feedback");
-        $("#pw2HelpBlock").removeClass("show");
-        $("#pw2HelpBlock").addClass("hide");
-        if(document.form1.inputPassword1.value!=document.form1.inputSuccess2.value)
-        {
-            $("#pass2Div").addClass("has-error has-feedback");
-            $("#pass2Div span").addClass("glyphicon glyphicon-remove form-control-feedback");
-            pwCheck= false;
-            $("#pw2HelpBlock").addClass("show");
-            $("#pw2HelpBlock").html("两次输入的密码不同!");
-            form1.inputSuccess2.focus();
-        }else{
-            $("#pass2Div").addClass("has-success has-feedback");
-            $("#pass2Div span").addClass("glyphicon glyphicon-ok form-control-feedback");
-            pwCheck= true;
-        }
-        submitCheck();
-    }
-
-    function submitCheck(){
-        if($("#comfirm").is(':checked') && telCheck && NameCheck && emailCheck && pwCheck){
-            $("#signBtn").removeAttr("disabled");
-            console.log("ok");
-            check=true;
-        }else{
-            $("#signBtn").attr("disabled","disabled");
-            console.log("error");
-            check=false;
-        }
-    }
-
-    function submitData(){
-        checkName();
-        checkEmail();
-        checkPassWord1();
-        checkPassWord2();
-        if(check) {
-            document.form1.submit();
-        }
-    }
-    var mySwiper = new Swiper('.swiper-container',{
-        noSwiping : true,
-        noSwipingClass : 'stop-swiping',
-        effect : 'cube',
-        cube: {
-            slideShadows: true,
-            shadow: false,
-            shadowOffset: 1,
-            shadowScale: 0.6
+//    function demo() {
+//        console.log($("#demo").attr("checked") == "checked")
+//    }
+    //--------------------------------------------------------------------翻页
+    var arr = [962, 546, 546]
+    var mySwiper = new Swiper('.swiper-container', {
+//        noSwiping : true,
+        noSwipingClass: 'stop-swiping',
+//        effect : 'cube',
+        effect: 'slide',
+        prevButton: '.swiper-button-prev',
+        nextButton: '.swiper-button-next',
+        onSlideChangeEnd: function (swiper) {
+            //console.log(swiper.activeIndex);
+            //console.log($(swiper.slides[swiper.activeIndex]));
+//            var a=$(swiper.slides[swiper.activeIndex]);
+//            console.log(a.context.scrollHeight);
+            var aheight = arr[swiper.activeIndex] + 'px';
+            $('.swiper-container').css("height", aheight);
+//            console.log(aheight);
         }
     })
-    function gotoIntroducePage(){
+    function gotoIntroducePage() {
         mySwiper.slideTo(1);
     }
-    function loginPage(){
-        $('#navbar').collapse('toggle');
-        mySwiper.slideTo(4);//切换到第一个slide，速度为1秒
+    function loginPage() {
+        window.location.href="join.html";
     }
-    function mainPage(){
+    function mainPage() {
         $('#navbar').collapse('toggle');
         mySwiper.slideTo(0);
     }
     function MapPage(){
-        $('#navbar').collapse('toggle');
-        mySwiper.slideTo(3);
+        window.location.href="map.html";
     }
-</script>
-//----------------------------------------------------------------------------------map
-<script type="text/javascript">
-    var map = new BMap.Map("BaiduMap");          // 创建地图实例
-    var point = new BMap.Point(116.404, 39.915);  // 创建点坐标
-    map.centerAndZoom(point, 20);                 // 初始化地图，设置中心点坐标和地图级别
-    //var marker = new BMap.Marker(new BMap.Point(116.404, 39.915));
-    map.addOverlay(new BMap.Marker(point));
 
-    function gotomy(){
-
-
-
-    }
 </script>
 </body>
 </html>
